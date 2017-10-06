@@ -1,0 +1,18 @@
+on fs
+    chown system system /dev/goodix_fp
+    chmod 0666 /dev/qseecom
+	
+service goodixfpd /system/bin/goodixfingerprintd 
+    class late_start
+    user system
+    group input
+
+service fingerprintd /system/bin/fingerprintd 
+    class late_start
+    user system
+    group input
+
+service ifaad /system/bin/ifaad 
+    class late_start
+    user system
+    group input
